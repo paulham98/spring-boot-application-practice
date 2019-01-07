@@ -1,6 +1,5 @@
 package com.example2.practice.controllers;
 
-
 import com.example2.practice.domain.User;
 import com.example2.practice.services.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,9 @@ public class UserController {
     private HelloService helloService;
 
     @Autowired
-    public UserController(HelloService helloservie) { this.helloService = helloservie; }
+    public UserController(HelloService helloservie) {
+        this.helloService = helloservie;
+    }
 
     @GetMapping(value= "api/v1/user")
     public User getUser() {
@@ -22,7 +23,7 @@ public class UserController {
         return user;
     }
 
-    @GetMapping(value = "apu/v1/hello")
+    @GetMapping(value = "api/v1/hello")
         public String getHello () { return this.helloService.getHello() ; }
 
 }
